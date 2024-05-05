@@ -1,0 +1,115 @@
+;MOV AX,61H      
+;MOV BX,2H
+;DIV BX
+;HLT  
+;Write a program to count the positive and negative numbers
+
+;MOV CL,0AH
+;MOV BL,00H
+;MOV DL,00H 
+;LEA SI,[1000H]
+;L1:MOV AL,[SI]
+;SHL AL,01
+;JNC L2
+;INC DL
+;JC L3
+;L2:INC BL
+;L3:INC SI
+;DEC CL
+;JNZ L1
+;MOV [100AH],BL
+;MOV [100BH],DL  
+;Write a program to find out the largest numbers from a given unordered array of  
+; 8 bit numbers,stored inthe locations starting from a known address in 8086
+
+;MOV CL,0AH
+;LEA SI,[1000H]
+;MOV AL,[SI]
+;L1:INC SI
+;MOV BL,[SI]
+;CMP AL,BL
+;JC L2
+;JMP L3
+;L2: MOV AL,BL 
+;L3: DEC CL
+;JNZ L1
+;MOV [100AH],AL
+;HLT
+
+;Write an assembly language program to find out the largest number
+;from a given unordered array of 16 bit numbers
+
+;MOV BX  ,1000H  
+;MOV CL,[BX]
+;INC BX 
+;MOV AX,[BX]
+;DEC CL
+;BACK: INC BX
+;INC BX
+;CMP AX,[BX]
+;JNC NEXT
+;MOV AX,[BX]
+;NEXT:DEC CL
+;JNZ BACK
+;MOV [1020H],AX
+;HLT  
+ 
+;ASCII INSTRUCTION 
+
+;SUB AH,AH
+;MOV AL,'6'
+;ADD AL,'7'
+;AAA
+;HLT
+
+;SUB AH,AH
+;MOV AL,'3'
+;SUB AL,'9'
+;AAS
+;OR AL,30H
+;HLT 
+
+;MOV AL,3
+;MOV BL,9
+;MUL BL
+;AAM
+;OR AX,3030H
+;HLT  
+
+;MOV AX,'15'
+;MOV BH,'6'
+;SUB AX,3030H
+;SUB BH,30H
+;AAD
+;DIV BH
+;ADD AX,3030H
+;MOV [1000H],AX
+;HLT
+     
+;Write an assembly language program to print Fibonacci series in 8086
+
+MOV SI,3000H
+MOV CX,0AH
+XOR AL,AL
+;MOV [SI],0AH
+;INC SI
+MOV [SI],00H 
+ADD AL,01H
+INC SI
+MOV [SI],AL
+INC SI
+MOV [SI],AL
+BACK:ADD AL,[SI]
+INC SI
+MOV [SI],AL
+DEC SI
+MOV AL,[SI]
+INC SI
+LOOP BACK
+HLT
+
+ 
+
+
+
+
